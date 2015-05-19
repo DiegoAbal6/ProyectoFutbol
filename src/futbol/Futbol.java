@@ -16,6 +16,8 @@ public class Futbol {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Interface obx=new Interface();
+        obx.setVisible(true);
       
     }
     

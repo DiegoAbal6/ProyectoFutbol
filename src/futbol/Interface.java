@@ -6,6 +6,7 @@
 package futbol;
 
 import java.awt.BorderLayout;
+import java.applet.AudioClip;
 
 /**
  *
@@ -18,10 +19,10 @@ public class Interface extends javax.swing.JFrame {
      */
     public Interface() {
         initComponents();
-        FutboljPanel ima=new FutboljPanel();
+        FutboljPanel ima = new FutboljPanel();
         this.add(ima, BorderLayout.CENTER);
         this.pack();
-      
+
     }
 
     /**
@@ -39,7 +40,6 @@ public class Interface extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 500));
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 0));
         jButton1.setFont(new java.awt.Font("AR JULIAN", 0, 14)); // NOI18N
         jButton1.setText("ENTRAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -48,7 +48,6 @@ public class Interface extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(204, 0, 0));
         jButton2.setFont(new java.awt.Font("AR JULIAN", 0, 14)); // NOI18N
         jButton2.setText("SALIR");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -81,16 +80,23 @@ public class Interface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        Menu ir=new Menu();
-        ir.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+
+        Menu ir = new Menu();
+        ir.setVisible(true);
+        AudioClip sonido;
+
+        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/sonido/sonido.wav"));
+        sonido.play();
+       
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,10 +133,9 @@ public class Interface extends javax.swing.JFrame {
             }
         });
     }
-     
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     // End of variables declaration//GEN-END:variables
 }
-
